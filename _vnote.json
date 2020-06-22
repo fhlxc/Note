@@ -1,0 +1,25 @@
+{
+    "attachment_folder": "_v_attachments",
+    "created_time": "2020-06-22T03:23:17Z",
+    "files": [
+    ],
+    "image_folder": "",
+    "recycle_bin_folder": "_v_recycle_bin",
+    "sub_directories": [
+        {
+            "name": "java并发"
+        },
+        {
+            "name": "软件设计模式"
+        },
+        {
+            "name": "android开发"
+        },
+        {
+            "name": "Linux学习"
+        }
+    ],
+    "tags": [
+    ],
+    "version": "1"
+}
