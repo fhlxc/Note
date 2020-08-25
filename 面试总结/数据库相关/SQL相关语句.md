@@ -1,0 +1,42 @@
+# SQL相关语句
+- 创建数据库：create database db-name
+- 删除数据库：drop database db-name
+- 创建表：create table table-name (col type1 [not null] [primary key], ...)
+- 删除表：drop table table-name
+- 增加一列：alter table table-name add column col type（增加后不能删除）
+- 添加主键：alter table table-name add primary key(col)
+- 删除主键：alter table table-name drop primary key(col)
+- 创建索引：create [unique] index index-name on table-name(col...)
+- 删除索引：drop index index-name（不可修改，若修改需删除再新增）
+- 创建视图：create view view-name
+- 删除视图：drop view view-name
+- 简单的sql语句
+    - 选择：select * from table1 where 范围
+    - 插入：insert into table1(field1,field2) values(value1,value2)
+    - 删除：delete from table1 where 范围
+    - 更新：update table1 set field1=value1 where 范围
+    - 查找：select * from table1 where field1 like ’%value1%’ ---like的语法很精妙，查资料!
+    - 排序：select * from table1 order by field1,field2 [desc]
+    - 总数：select count(*/col) as totalcount from table1
+    - 求和：select sum(field1) as sumvalue from table1
+    - 平均：select avg(field1) as avgvalue from table1
+    - 最大：select max(field1) as maxvalue from table1
+    - 最小：select min(field1) as minvalue from table1
+- 运算符
+    - union：组合两个结果表，消除重复行，生成新的结果表，与ALL连用不消除重复行
+    - except：包括所有在表1中而不在表2中的结果，消除重复行，与ALL连用不消除重复行
+    - intersect：既在表1，又在表2中的记过，消除重复行，当与ALL连用不消除重复行
+- 连接
+    - left [outer] join ... [on]：左外连接，包括左边所有的行
+    - right [outer] join ... [on]：右外连接，包括右边所有的行
+    - full [outer] join ... [on]：全外连接，包括两个连接表中的所有记录
+    - natural join：自然连接，相同字段连上，不匹配的便不会存在行
+- 分组：group by 分组后按分组标准调用sql中常见函数
+- 排序：order by desc-降序 asc-升序
+- 临时表：with table-name(col...) as (sql语句)
+- 前n条记录：top n    select top 10 * from table1 where ...
+- 筛选不同的记录：distinct    select distinct * into temp from tablename
+- 创建表的备份数据文件：select ... into table-name ... 
+- 逻辑连接词：and or <> = like in not
+- 拼接字符串：concat(col, "xxx", ...) concat_ws(token, col, "xxx", ...) 连接使用token分隔例如token为;，那么结果为col;xxx;...;
+- 分页之limit：limit num1, num2    num1表示从哪个地方开始查，num2表示查询的个数    select * from table1 LIMIT num1，num2;
